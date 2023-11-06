@@ -1,0 +1,22 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  letter-spacing: normal;
+}
+
+html {
+  font-family: var(--font-base-family);
+  font-size: var(--font-base-size);
+}
+
+body {
+  margin: 0;
+}
+
+#app-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+}
