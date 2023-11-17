@@ -1,0 +1,162 @@
+<div class="flex flex-col gap-6">
+  <div class="charts flex flex-col gap-6">
+    <div class="p-6 bg-white flex flex-col gap-4 rounded-lg border-solid border-gray-100 border-[1px]">
+      <div class="text-xl">Sales Overview</div>
+      <div id="chart1"></div>
+    </div>
+
+    <div class="flex flex-col md:flex-row gap-6">
+      <div
+        class="w-full md:w-[50%] p-6 bg-white flex flex-col gap-4 rounded-lg border-solid border-gray-100 border-[1px]"
+      >
+        <div class="text-xl">Monthly Earnings</div>
+        <div id="chart2"></div>
+      </div>
+
+      <div
+        class="w-full md:w-[50%] p-6 bg-white flex flex-col gap-4 rounded-lg border-solid border-gray-100 border-[1px]"
+      >
+        <div class="text-xl">Yearly Earnings</div>
+        <div id="chart3"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="transactions flex flex-col lg:flex-row gap-4">
+    <div class="p-6 bg-white w-full lg:w-[30%] rounded-lg border-solid border-gray-100 border-[1px]">
+      <div class="text-xl p-6">Recent Transactions</div>
+
+      <div class="flex flex-col">
+        <div class="flex flex-row gap-2 min-h-[60px]">
+          <div class="text-right w-[100px] min-w-[100px] text-base">09:30</div>
+          <div class="flex flex-col gap-1 items-center">
+            <div class="text-blue-400 text-xl w-6 h-6 text-center">o</div>
+            <div class="bg-gray-200 w-[1px] h-full"></div>
+          </div>
+          <div class="text-base">Payment received from John Doe of $385.90</div>
+        </div>
+
+        <div class="flex flex-row gap-2 min-h-[60px]">
+          <div class="text-right w-[100px] min-w-[100px] text-base">10:00 am</div>
+          <div class="flex flex-col gap-1 items-center">
+            <div class="text-green-400 text-xl w-6 h-6 text-center">o</div>
+            <div class="bg-gray-200 w-[1px] h-full"></div>
+          </div>
+          <div class="text-base">
+            <span class="font-medium">New sale recorded</span> <span class="text-blue-400"> #ML-3467</span>
+          </div>
+        </div>
+
+        <div class="flex flex-row gap-2 min-h-[60px]">
+          <div class="text-right w-[100px] min-w-[100px] text-base">09:30 am</div>
+          <div class="flex flex-col gap-1 items-center">
+            <div class="text-orange-400 text-xl w-6 h-6 text-center">o</div>
+            <div class="bg-gray-200 w-[1px] h-full"></div>
+          </div>
+          <div class="text-base">
+            <span class="font-medium">New sale recorded</span> <span class="text-blue-400"> #ML-3467</span>
+          </div>
+        </div>
+
+        <div class="flex flex-row gap-2 min-h-[60px]">
+          <div class="text-right w-[100px] min-w-[100px] text-base">09:30 am</div>
+          <div class="flex flex-col gap-1 items-center">
+            <div class="text-red-400 text-xl w-6 h-6 text-center">o</div>
+            <div class="bg-gray-200 w-[1px] h-full"></div>
+          </div>
+          <div class="text-base font-medium">New arrival recorded</div>
+        </div>
+
+        <div class="flex flex-row gap-2 min-h-[60px]">
+          <div class="text-right w-[100px] min-w-[100px] text-base">12:00 am</div>
+          <div class="flex flex-col gap-1 items-center">
+            <div class="text-green-400 text-xl w-6 h-6 text-center">o</div>
+          </div>
+          <div class="text-base">Payment Done</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-6 bg-white w-full lg:w-[70%] rounded-lg border-solid border-gray-100 border-[1px]">
+      <div class="text-xl p-6">Recent Transactions</div>
+
+      <table class="w-full table-auto text-lg overflow-auto">
+        <thead>
+          <tr>
+            <th class="text-base text-left font-medium pb-6">Id</th>
+            <th class="text-base text-left font-medium pb-6">Assigned</th>
+            <th class="text-base text-left font-medium pb-6">Name</th>
+            <th class="text-base text-left font-medium pb-6">Priority</th>
+            <th class="text-base text-left font-medium pb-6">Budget</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="text-base">1</span></td>
+            <td>
+              <div class="text-base">Sunil Joshi</div>
+              <div class="text-base text-gray-600 font-light">Web Designer</div>
+            </td>
+            <td><span class="text-base text-gray-400 font-normal">Elite Admin</span></td>
+            <td>
+              <span class="text-base px-4 py-2 bg-indigo-400 rounded-lg text-white">Low</span>
+            </td>
+            <td>
+              <span class="text-base font-medium">$3.9</span>
+            </td>
+          </tr>
+
+          <tr>
+            <td><span class="text-base"></span>2</td>
+            <td>
+              <div class="text-base">Andrew McDownland</div>
+              <div class="text-base text-gray-600 font-light">Project Manager</div>
+            </td>
+            <td><span class="text-base text-gray-400 font-normal">Real Homes WP Theme</span></td>
+            <td>
+              <span class="text-base px-4 py-2 bg-indigo-400 rounded-lg text-white">Medium</span>
+            </td>
+            <td>
+              <span class="text-base font-medium">$24.5k</span>
+            </td>
+          </tr>
+
+          <tr>
+            <td><span class="text-base">3</span></td>
+            <td>
+              <div class="text-base">MedicalPro WP Theme</div>
+              <div class="text-base text-gray-600 font-light">Project Manager</div>
+            </td>
+            <td><span class="text-base text-gray-400 font-normal">Elite Admin</span></td>
+            <td>
+              <span class="text-base px-4 py-2 bg-orange-400 rounded-lg text-white">High</span>
+            </td>
+            <td>
+              <span class="text-base font-medium">$12.8k</span>
+            </td>
+          </tr>
+
+          <tr>
+            <td><span class="text-base">4</span></td>
+            <td>
+              <div class="text-base">Hosting Press HTML</div>
+              <div class="text-base text-gray-600 font-light">Frontend Engineer</div>
+            </td>
+            <td><span class="text-base text-gray-400 font-normal">Elite Admin</span></td>
+            <td>
+              <span class="text-base px-4 py-2 bg-teal-400 rounded-lg text-white">Critical</span>
+            </td>
+            <td>
+              <span class="text-base font-medium">$2.4k</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="text-base text-gray-600 text-center">
+    Design and Developed by <span class="text-blue-400">hoainhaannguyen&#64;gmail.com</span> Distributed by
+    <span class="text-blue-400">Nhan Nguyen</span>
+  </div>
+</div>

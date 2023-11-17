@@ -1,232 +1,198 @@
 <div class="flex flex-row bg-gray-50">
-  <div class="left-sidebar p-6 border-r min-w-[400px] min-h-screen max-h-screen overflow-auto flex flex-col gap-6">
-    <div class="text-4xl font-semibold text-blue-950 mb-4 text-center">Angular Dashboard</div>
+  @if (isShowSideNav()) {
+    <div
+      class="z-20 bg-white left-sidebar p-6 border-r w-[333px] h-screen overflow-auto flex flex-col gap-6"
+    >
+      <div class="text-2xl font-bold mb-4 flex flex-row items-center justify-between gap-4">
+        <div class="text-indigo-400">Angular Dashboard</div>
+        <div id="close-side-nav" (click)="isShowSideNav.set(false)">
+          <span class="material-icons select-none cursor-pointer text-gray-600">close</span>
+        </div>
+      </div>
 
-    <div class="flex flex-col gap-2">
-      <div class="text-sm font-medium">HOME</div>
-      <div class="cursor-pointer text-white bg-blue-500 p-3 rounded-lg flex flex-row items-center gap-3">
-        <div class="h-6"><span class="material-icons">dashboard</span></div>
-        <div class="text-sm">Dashboard</div>
+      <div class="flex flex-col gap-2">
+        <div class="text-sm font-medium">HOME</div>
+        <div
+          [ngClass]="{
+            'text-white bg-indigo-400 ': pageActivated === 'Dashboard',
+            'hover:text-indigo-400': pageActivated !== 'Dashboard'
+          }"
+          class="cursor-pointer p-3 rounded-lg flex flex-row items-center gap-3"
+          (click)="onDashboardClicked()"
+        >
+          <div class="h-6"><span class="material-icons select-none">dashboard</span></div>
+          <div class="text-sm">Dashboard</div>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <div class="text-sm font-medium">UI COMPONENTS</div>
+        <div
+          [ngClass]="{
+            'text-white bg-indigo-400 ': pageActivated === 'Buttons',
+            'hover:text-indigo-400': pageActivated !== 'Buttons'
+          }"
+          class="cursor-pointer p-3 rounded-lg flex flex-row items-center gap-3"
+          (click)="onButtonsClicked()"
+        >
+          <div class="h-6"><span class="material-icons select-none">smart_button</span></div>
+          <div class="text-sm">Buttons</div>
+        </div>
+        <div
+          [ngClass]="{
+            'text-white bg-indigo-400 ': pageActivated === 'Alerts',
+            'hover:text-indigo-400': pageActivated !== 'Alerts'
+          }"
+          class="cursor-pointer p-3 rounded-lg flex flex-row items-center gap-3"
+          (click)="onAlertsClicked()"
+        >
+          <div class="h-6"><span class="material-icons select-none">error</span></div>
+          <div class="text-sm">Alerts</div>
+        </div>
+        <div
+          [ngClass]="{
+            'text-white bg-indigo-400 ': pageActivated === 'Card',
+            'hover:text-indigo-400': pageActivated !== 'Card'
+          }"
+          class="cursor-pointer p-3 rounded-lg flex flex-row items-center gap-3"
+          (click)="onCardClicked()"
+        >
+          <div class="h-6"><span class="material-icons select-none">style</span></div>
+          <div class="text-sm">Card</div>
+        </div>
+        <div
+          [ngClass]="{
+            'text-white bg-indigo-400 ': pageActivated === 'Forms',
+            'hover:text-indigo-400': pageActivated !== 'Forms'
+          }"
+          class="cursor-pointer p-3 rounded-lg flex flex-row items-center gap-3"
+          (click)="onFormsClicked()"
+        >
+          <div class="h-6"><span class="material-icons select-none">feed</span></div>
+          <div class="text-sm">Forms</div>
+        </div>
+        <div
+          [ngClass]="{
+            'text-white bg-indigo-400 ': pageActivated === 'Typography',
+            'hover:text-indigo-400': pageActivated !== 'Typography'
+          }"
+          class="cursor-pointer p-3 rounded-lg flex flex-row items-center gap-3"
+          (click)="onTypographyClicked()"
+        >
+          <div class="h-6"><span class="material-icons select-none">text_format</span></div>
+          <div class="text-sm">Typography</div>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <div class="text-sm font-medium">AUTH</div>
+        <div
+          [ngClass]="{
+            'text-white bg-indigo-400 ': pageActivated === 'Login',
+            'hover:text-indigo-400': pageActivated !== 'Login'
+          }"
+          class="cursor-pointer p-3 rounded-lg flex flex-row items-center gap-3"
+          (click)="onLoginClick()"
+        >
+          <div class="h-6"><span class="material-icons select-none">login</span></div>
+          <div class="text-sm">Login</div>
+        </div>
+        <div
+          [ngClass]="{
+            'text-white bg-indigo-400 ': pageActivated === 'Register',
+            'hover:text-indigo-400': pageActivated !== 'Register'
+          }"
+          class="cursor-pointer p-3 rounded-lg flex flex-row items-center gap-3"
+          (click)="onRegisterClicked()"
+        >
+          <div class="h-6"><span class="material-icons select-none">how_to_reg</span></div>
+          <div class="text-sm">Register</div>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <div class="text-sm font-medium">EXTRA</div>
+        <div
+          [ngClass]="{
+            'text-white bg-indigo-400 ': pageActivated === 'Icons',
+            'hover:text-indigo-400': pageActivated !== 'Icons'
+          }"
+          class="cursor-pointer p-3 rounded-lg flex flex-row items-center gap-3"
+          (click)="onIconsClicked()"
+        >
+          <div class="h-6"><span class="material-icons select-none">emoji_emotions</span></div>
+          <div class="text-sm">Icons</div>
+        </div>
+        <div
+          [ngClass]="{
+            'text-white bg-indigo-400 ': pageActivated === 'Sample Page',
+            'hover:text-indigo-400': pageActivated !== 'Sample Page'
+          }"
+          class="cursor-pointer p-3 rounded-lg flex flex-row items-center gap-3"
+          (click)="onSamplePageClicked()"
+        >
+          <div class="h-6"><span class="material-icons select-none">article</span></div>
+          <div class="text-sm">Sample Page</div>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center gap-2 p-4 bg-indigo-50 rounded-lg">
+        <div class="text-lg p-3 font-medium">Upgrade to pro</div>
+        <div class="text-sm font-medium cursor-pointer p-3 rounded-lg text-indigo-400">hoainhaannguyen&#64;gmail.com</div>
+        <div class="text-sm font-medium cursor-pointer p-3 rounded-lg hover:bg-indigo-50 hover:text-indigo-400">
+          Buy Pro
+        </div>
       </div>
     </div>
-
-    <div class="flex flex-col gap-2">
-      <div class="text-sm font-medium">UI COMPONENTS</div>
-      <div class="cursor-pointer p-3 rounded-lg hover:bg-blue-50 hover:text-blue-400 flex flex-row items-center gap-3">
-        <div class="h-6"><span class="material-icons">smart_button</span></div>
-        <div class="text-sm">Buttons</div>
-      </div>
-      <div class="cursor-pointer p-3 rounded-lg hover:bg-blue-50 hover:text-blue-400 flex flex-row items-center gap-3">
-        <div class="h-6"><span class="material-icons">error</span></div>
-        <div class="text-sm">Alerts</div>
-      </div>
-      <div class="cursor-pointer p-3 rounded-lg hover:bg-blue-50 hover:text-blue-400 flex flex-row items-center gap-3">
-        <div class="h-6"><span class="material-icons">style</span></div>
-        <div class="text-sm">Card</div>
-      </div>
-      <div class="cursor-pointer p-3 rounded-lg hover:bg-blue-50 hover:text-blue-400 flex flex-row items-center gap-3">
-        <div class="h-6"><span class="material-icons">feed</span></div>
-        <div class="text-sm">Forms</div>
-      </div>
-      <div class="cursor-pointer p-3 rounded-lg hover:bg-blue-50 hover:text-blue-400 flex flex-row items-center gap-3">
-        <div class="h-6"><span class="material-icons">text_format</span></div>
-        <div class="text-sm">Typography</div>
-      </div>
-    </div>
-
-    <div class="flex flex-col gap-2">
-      <div class="text-sm font-medium">AUTH</div>
-      <div class="cursor-pointer p-3 rounded-lg hover:bg-blue-50 hover:text-blue-400 flex flex-row items-center gap-3">
-        <div class="h-6"><span class="material-icons">login</span></div>
-        <div class="text-sm">Login</div>
-      </div>
-      <div class="cursor-pointer p-3 rounded-lg hover:bg-blue-50 hover:text-blue-400 flex flex-row items-center gap-3">
-        <div class="h-6"><span class="material-icons">how_to_reg</span></div>
-        <div class="text-sm">Register</div>
-      </div>
-    </div>
-
-    <div class="flex flex-col gap-2">
-      <div class="text-sm font-medium">EXTRA</div>
-      <div class="cursor-pointer p-3 rounded-lg hover:bg-blue-50 hover:text-blue-400 flex flex-row items-center gap-3">
-        <div class="h-6"><span class="material-icons">emoji_emotions</span></div>
-        <div class="text-sm">Icons</div>
-      </div>
-      <div class="cursor-pointer p-3 rounded-lg hover:bg-blue-50 hover:text-blue-400 flex flex-row items-center gap-3">
-        <div class="h-6"><span class="material-icons">article</span></div>
-        <div class="text-sm">Sample Page</div>
-      </div>
-    </div>
-
-    <div class="flex flex-col items-center gap-2 p-4 bg-blue-50 rounded-lg">
-      <div class="text-lg p-3 font-medium">Upgrade to pro</div>
-      <div class="text-sm font-medium cursor-pointer p-3 rounded-lg text-blue-500">hoainhaannguyen&#64;gmail.com</div>
-      <div class="text-sm font-medium cursor-pointer p-3 rounded-lg hover:bg-blue-50 hover:text-blue-400">Buy Pro</div>
-    </div>
-  </div>
+  }
 
   <div class="right-sidebar p-6 w-full min-h-screen max-h-screen overflow-auto flex flex-col gap-16">
     <div class="top-nav flex flex-row items-center justify-between px-4">
-      <div class="h-6"><span class="material-icons">notification_add</span></div>
+      <div class="h-6 flex flex-row gap-6">
+        <div
+          id="open-side-nav"
+          class="material-icons select-none cursor-pointer text-gray-600"
+          (click)="isShowSideNav.set(true)"
+        >
+          menu
+        </div>
+        <div class="material-icons select-none cursor-pointer text-gray-600">notification_add</div>
+      </div>
 
       <div class="flex flex-row gap-6">
-        <button class="text-sm bg-blue-500 rounded-lg px-4 py-2 text-white">Contact Me</button>
-        <div class="h-9"><span class="material-icons leading-9 w-9 h-9 text-4xl text-blue-950">account_circle</span></div>
+        <button class="text-sm bg-indigo-400 rounded-lg px-4 py-2 text-white">Contact Me</button>
+        <div class="h-9">
+          <span
+            class="material-icons select-none leading-9 w-9 h-9 text-4xl text-gray-600 cursor-pointer"
+            [cdkMenuTriggerFor]="menu"
+            >account_circle</span
+          >
+        </div>
+        <ng-template #menu>
+          <div class="flex flex-col bg-white border-[1px] border-solid border-gray-100 rounded-lg py-2" cdkMenu>
+            <div cdkMenuItem class="px-6 py-3 outline-none cursor-pointer hover:bg-gray-100 flex flex-row gap-1">
+              <div><span class="material-icons select-none">person</span></div>
+              <div><span class="text-sm">My Profile</span></div>
+            </div>
+            <div cdkMenuItem class="px-6 py-3 outline-none cursor-pointer hover:bg-gray-100 flex flex-row gap-1">
+              <div><span class="material-icons select-none">mail</span></div>
+              <div><span class="text-sm">My Account</span></div>
+            </div>
+            <div cdkMenuItem class="px-6 py-3 outline-none cursor-pointer hover:bg-gray-100 flex flex-row gap-1">
+              <div><span class="material-icons select-none">task</span></div>
+              <div><span class="text-sm">My Tasks</span></div>
+            </div>
+            <div cdkMenuItem class="px-6 py-3 outline-none cursor-pointer hover:bg-gray-100 flex flex-row gap-1">
+              <div><span class="material-icons select-none">logout</span></div>
+              <div><span class="text-sm">Logout</span></div>
+            </div>
+          </div>
+        </ng-template>
       </div>
     </div>
 
-    <div class="content flex flex-col gap-6">
-      <div class="charts flex flex-col gap-6">
-        <div class="p-6 bg-white flex flex-col gap-4">
-          <div class="text-xl">Sales Overview</div>
-          <div id="chart1"></div>
-        </div>
-
-        <div class="flex flex-row gap-6">
-          <div class="w-[50%] p-6 bg-white flex flex-col gap-4">
-            <div class="text-xl">Monthly Earnings</div>
-            <div id="chart2"></div>
-          </div>
-
-          <div class="w-[50%] p-6 bg-white flex flex-col gap-4">
-            <div class="text-xl">Yearly Earnings</div>
-            <div id="chart3"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="transactions flex flex-row gap-4">
-        <div class="p-6 bg-white w-[30%]">
-          <div class="text-xl p-6">Recent Transactions</div>
-
-          <div class="flex flex-col">
-            <div class="flex flex-row gap-2 min-h-[60px]">
-              <div class="text-right w-[100px] min-w-[100px] text-base">09:30</div>
-              <div class="flex flex-col gap-1 items-center">
-                <div class="text-blue-400 text-xl w-6 h-6 text-center">o</div>
-                <div class="bg-gray-200 w-[1px] h-full"></div>
-              </div>
-              <div class="text-base">Payment received from John Doe of $385.90</div>
-            </div>
-
-            <div class="flex flex-row gap-2 min-h-[60px]">
-              <div class="text-right w-[100px] min-w-[100px] text-base">10:00 am</div>
-              <div class="flex flex-col gap-1 items-center">
-                <div class="text-green-400 text-xl w-6 h-6 text-center">o</div>
-                <div class="bg-gray-200 w-[1px] h-full"></div>
-              </div>
-              <div class="text-base"><span class="font-medium">New sale recorded</span> <span class="text-blue-400"> #ML-3467</span></div>
-            </div>
-
-            <div class="flex flex-row gap-2 min-h-[60px]">
-              <div class="text-right w-[100px] min-w-[100px] text-base">09:30 am</div>
-              <div class="flex flex-col gap-1 items-center">
-                <div class="text-orange-400 text-xl w-6 h-6 text-center">o</div>
-                <div class="bg-gray-200 w-[1px] h-full"></div>
-              </div>
-              <div class="text-base"><span class="font-medium">New sale recorded</span> <span class="text-blue-400"> #ML-3467</span></div>
-            </div>
-
-            <div class="flex flex-row gap-2 min-h-[60px]">
-              <div class="text-right w-[100px] min-w-[100px] text-base">09:30 am</div>
-              <div class="flex flex-col gap-1 items-center">
-                <div class="text-red-400 text-xl w-6 h-6 text-center">o</div>
-                <div class="bg-gray-200 w-[1px] h-full"></div>
-              </div>
-              <div class="text-base font-medium">New arrival recorded</div>
-            </div>
-
-            <div class="flex flex-row gap-2 min-h-[60px]">
-              <div class="text-right w-[100px] min-w-[100px] text-base">12:00 am</div>
-              <div class="flex flex-col gap-1 items-center">
-                <div class="text-green-400 text-xl w-6 h-6 text-center">o</div>
-              </div>
-              <div class="text-base">Payment Done</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="p-6 bg-white w-[70%]">
-          <div class="text-xl p-6">Recent Transactions</div>
-
-          <table class="w-full table-auto text-lg">
-            <thead>
-              <tr>
-                <th class="text-base text-left font-medium pb-6">Id</th>
-                <th class="text-base text-left font-medium pb-6">Assigned</th>
-                <th class="text-base text-left font-medium pb-6">Name</th>
-                <th class="text-base text-left font-medium pb-6">Priority</th>
-                <th class="text-base text-left font-medium pb-6">Budget</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>
-                  <div>Sunil Joshi</div>
-                  <div class="text-base text-gray-600 font-light">Web Designer</div>
-                </td>
-                <td><span class="text-base text-gray-500 font-normal">Elite Admin</span></td>
-                <td>
-                  <span class="text-base px-4 py-2 bg-indigo-400 rounded-lg text-white">Low</span>
-                </td>
-                <td>
-                  <span class="text-base font-medium">$3.9</span>
-                </td>
-              </tr>
-
-              <tr>
-                <td>2</td>
-                <td>
-                  <div>Andrew McDownland</div>
-                  <div class="text-base text-gray-600 font-light">Project Manager</div>
-                </td>
-                <td><span class="text-base text-gray-500 font-normal">Real Homes WP Theme</span></td>
-                <td>
-                  <span class="text-base px-4 py-2 bg-blue-400 rounded-lg text-white">Medium</span>
-                </td>
-                <td>
-                  <span class="text-base font-medium">$24.5k</span>
-                </td>
-              </tr>
-
-              <tr>
-                <td>1</td>
-                <td>
-                  <div>MedicalPro WP Theme</div>
-                  <div class="text-base text-gray-600 font-light">Project Manager</div>
-                </td>
-                <td><span class="text-base text-gray-500 font-normal">Elite Admin</span></td>
-                <td>
-                  <span class="text-base px-4 py-2 bg-orange-400 rounded-lg text-white">High</span>
-                </td>
-                <td>
-                  <span class="text-base font-medium">$12.8k</span>
-                </td>
-              </tr>
-
-              <tr>
-                <td>1</td>
-                <td>
-                  <div>Hosting Press HTML</div>
-                  <div class="text-base text-gray-600 font-light">Frontend Engineer</div>
-                </td>
-                <td><span class="text-base text-gray-500 font-normal">Elite Admin</span></td>
-                <td>
-                  <span class="text-base px-4 py-2 bg-teal-400 rounded-lg text-white">Critical</span>
-                </td>
-                <td>
-                  <span class="text-base font-medium">$2.4k</span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div class="text-base text-gray-600 text-center">
-        Design and Developed by <span class="text-blue-400">hoainhaannguyen&#64;gmail.com</span> Distributed by <span class="text-blue-400">Nhan Nguyen</span>
-      </div>
+    <div class="content">
+      <ng-container *ngComponentOutlet="contentComponent"></ng-container>
     </div>
   </div>
 </div>

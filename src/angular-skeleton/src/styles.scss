@@ -11,6 +11,9 @@
 // Scrollbar
 @import './styles/scrollbar';
 
+// Material
+@import './styles//material/theme';
+
 // Pages
 @import './styles/pages/app-shell';
 @import './styles/pages/not-found';
@@ -20,6 +23,7 @@
 @import './styles/app';
 
 // Screens
+@import './styles/screens/customize';
 @import './styles/screens/mobile';
 @import './styles/screens/extra-small';
 @import './styles/screens/small-tablet';
