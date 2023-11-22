@@ -34,12 +34,7 @@
               "src/styles.scss"
             ],
             "scripts": [],
-            "allowedCommonJsDependencies": [
-              "lodash",
-              "luxon",
-              "uuid",
-              "flat"
-            ],
+            "allowedCommonJsDependencies": ["*"],
             "webWorkerTsConfig": "tsconfig.worker.json"
           },
           "configurations": {
